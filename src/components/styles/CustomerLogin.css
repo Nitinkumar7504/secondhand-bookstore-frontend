@@ -1,0 +1,72 @@
+/* src/components/styles/CustomerLogin.css */
+
+.customer-login-container {
+  background-color: #f9eac9;
+  font-family: 'Georgia', serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.customer-login-form {
+  background-color: #fff8e7;
+  padding: 40px 50px;
+  border: 2px solid #b67a3c;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 350px;
+}
+
+.customer-login-form h2 {
+  font-size: 2rem;
+  color: #5a3c1e;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.customer-login-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 2px solid #d0b48f;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fffef7;
+}
+
+.customer-login-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #cc6b2c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.customer-login-form button:hover {
+  background-color: #a84f1d;
+}
+
+.login-decoration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 180px;
+  z-index: 0;
+}
+
+.login-tag {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  z-index: 0;
+}

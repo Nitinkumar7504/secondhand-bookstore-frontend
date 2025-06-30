@@ -1,0 +1,63 @@
+.admin-dashboard {
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  color: #333;
+}
+
+.admin-dashboard h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.admin-dashboard h3 {
+  margin-top: 40px;
+  font-size: 24px;
+  color: #34495e;
+}
+
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.admin-dashboard th,
+.admin-dashboard td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.admin-dashboard th {
+  background-color: #f0f4f8;
+  font-weight: 600;
+  color: #2f3d4c;
+}
+
+.admin-dashboard tr:hover {
+  background-color: #f9fbfc;
+}
+
+.admin-dashboard tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-dashboard p {
+  font-size: 16px;
+}
+
+.admin-dashboard .error {
+  color: #e74c3c;
+  background-color: #fdecea;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
