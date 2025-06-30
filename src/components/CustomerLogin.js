@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../components/styles/CustomerLogin.css';
-import booksImage from './assets/books.png'; // only this image remains
+import booksImage from './assets/books.png';
 
 const CustomerLogin = () => {
   const [email, setEmail] = useState('');
@@ -12,17 +12,20 @@ const CustomerLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      axios.post('https://secondhand-bookstore-backend.onrender.com/api/auth/login', {
-        email, password
-      }, { withCredentials: true })
+      const res = await axios.post(
+        'https://secondhand-bookstore-backend.onrender.com/api/auth/login',
+        { email, password },
+        { withCredentials: true }
+      );
 
-
+      // Save login info
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
 
+      // Redirect to dashboard
       navigate('/dashboard');
     } catch (err) {
-      console.error(err.response?.data || err.message);
+      console.error('❌ Login error:', err.response?.data || err.message);
       alert(`Login failed: ${err.response?.data?.error || 'Unknown error'}`);
     }
   };
