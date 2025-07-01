@@ -11,22 +11,29 @@ const CustomerLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const res = await axios.post(
         'https://secondhand-bookstore-backend.onrender.com/api/auth/login',
         { email, password },
-        { withCredentials: true }
+        { withCredentials: true } // IMPORTANT for CORS
       );
 
-      // Save login info
+      // ✅ Save token + user data
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
 
-      // Redirect to dashboard
+      // ✅ Navigate to dashboard
       navigate('/dashboard');
     } catch (err) {
-      console.error('❌ Login error:', err.response?.data || err.message);
-      alert(`Login failed: ${err.response?.data?.error || 'Unknown error'}`);
+      const errorMessage =
+        err.response?.data?.error ||
+        err.response?.data?.message ||
+        err.message ||
+        'Unknown error';
+
+      console.error('❌ Login failed:', errorMessage);
+      alert(`Login failed: ${errorMessage}`);
     }
   };
 
